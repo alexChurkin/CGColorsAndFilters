@@ -61,5 +61,13 @@ namespace CGFilters
             pictureBox.Image = result;
             pictureBox.Refresh();
         }
+
+        private void embossingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EmbossingFilter f = new EmbossingFilter();
+            Bitmap result = f.ProcessImage(image);
+            pictureBox.Image = result;
+            pictureBox.Refresh();
+        }
     }
 }

@@ -152,6 +152,7 @@
             this.embossingToolStripMenuItem.Name = "embossingToolStripMenuItem";
             this.embossingToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             this.embossingToolStripMenuItem.Text = "7 - Embossing";
+            this.embossingToolStripMenuItem.Click += new System.EventHandler(this.embossingToolStripMenuItem_Click);
             // 
             // motionBlurToolStripMenuItem
             // 
