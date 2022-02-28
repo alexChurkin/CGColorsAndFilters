@@ -1,18 +1,14 @@
-﻿using System.Drawing;
-
-namespace CGFilters
+﻿namespace Filter
 {
-    public class EmbossingFilter : MatrixFilter
+    using System.Drawing;
+
+    public class Filterr
     {
-        public EmbossingFilter()
+        public static int Clamp(int value, int min, int max)
         {
-            int sizeX = 3, sizeY = 3;
-            kernel = new float[sizeX, sizeY];
-            for (int i = 0; i < sizeX; i++)
-                for (int j = 0; j < sizeY; j++)
-                    kernel[i, j] = 0.0f;
-            kernel[1, 0] = kernel[2, 1] = 1.0f;
-            kernel[0, 1] = kernel[1, 2] = -1.0f;
+            if (value < min) return min;
+            if (value > max) return max;
+            return value;
         }
 
         public static Bitmap Execute(Bitmap sourceImage)

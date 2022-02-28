@@ -65,17 +65,7 @@ namespace CGFilters
 
         private void embossingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Bitmap result;
-
-            EmbossingFilter1 f = new EmbossingFilter1();
-            result = f.ProcessImage(image);
-
-            IncreaseBrightnessFilter1 br = new IncreaseBrightnessFilter1(100);
-            result = br.ProcessImage(result);
-
-            ShadesOfGrayFilter1 s = new ShadesOfGrayFilter1();
-            result = s.ProcessImage(result);
-
+            Bitmap result = EmbossingFilter.Execute(image);
             pictureBox.Image = result;
             pictureBox.Refresh();
         }
