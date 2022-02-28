@@ -159,12 +159,14 @@
             this.motionBlurToolStripMenuItem.Name = "motionBlurToolStripMenuItem";
             this.motionBlurToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             this.motionBlurToolStripMenuItem.Text = "8 - Motion blur";
+            this.motionBlurToolStripMenuItem.Click += new System.EventHandler(this.motionBlurToolStripMenuItem_Click);
             // 
             // grayWorldToolStripMenuItem
             // 
             this.grayWorldToolStripMenuItem.Name = "grayWorldToolStripMenuItem";
             this.grayWorldToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             this.grayWorldToolStripMenuItem.Text = "9 - Gray world";
+            this.grayWorldToolStripMenuItem.Click += new System.EventHandler(this.grayWorldToolStripMenuItem_Click);
             // 
             // toolStripMenuItem6
             // 

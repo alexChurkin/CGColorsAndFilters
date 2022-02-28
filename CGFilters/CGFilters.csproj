@@ -49,8 +49,10 @@
     <Compile Include="Filters\Filter.cs" />
     <Compile Include="Filters\InvertFilter.cs" />
     <Compile Include="Filters\MatrixFilters\EmbossingFilter.cs" />
+    <Compile Include="Filters\MatrixFilters\GrayWorldFilter.cs" />
+    <Compile Include="Filters\MatrixFilters\MotionBlurFilter.cs" />
     <Compile Include="Filters\ShadesOfGrayFilter.cs" />
-    <Compile Include="EmbossingCode.cs" />
+    <Compile Include="testcode.cs" />
     <Compile Include="IncreaseBrightnessFilter.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

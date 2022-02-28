@@ -69,5 +69,19 @@ namespace CGFilters
             pictureBox.Image = result;
             pictureBox.Refresh();
         }
+
+        private void motionBlurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bitmap result = MotionBlurFilter.Execute(image);
+            pictureBox.Image = result;
+            pictureBox.Refresh();
+        }
+
+        private void grayWorldToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bitmap result = GrayWorldFilter.Execute(image);
+            pictureBox.Image = result;
+            pictureBox.Refresh();
+        }
     }
 }
