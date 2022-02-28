@@ -4,13 +4,18 @@ namespace CGFilters
 {
     public class IncreaseBrightnessFilter: Filter
     {
+        private int value;
+        public IncreaseBrightnessFilter(int value = 20)
+        {
+            this.value = value;
+        }
         protected override Color CalculateNewPixelColor(Bitmap source, int x, int y)
         {
             Color sourceColor = source.GetPixel(x, y);
 
-            int R = Clamp(sourceColor.R + 20, 0, 255);
-            int G = Clamp(sourceColor.G + 20, 0, 255);
-            int B = Clamp(sourceColor.B + 20, 0, 255);
+            int R = Clamp(sourceColor.R + value, 0, 255);
+            int G = Clamp(sourceColor.G + value, 0, 255);
+            int B = Clamp(sourceColor.B + value, 0, 255);
 
             Color resultColor = Color.FromArgb(R, G, B);
             return resultColor;

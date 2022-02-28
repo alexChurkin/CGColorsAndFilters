@@ -50,6 +50,7 @@
     <Compile Include="Filters\InvertFilter.cs" />
     <Compile Include="Filters\MatrixFilters\EmbossingFilter.cs" />
     <Compile Include="Filters\ShadesOfGrayFilter.cs" />
+    <Compile Include="EmbossingCode.cs" />
     <Compile Include="IncreaseBrightnessFilter.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

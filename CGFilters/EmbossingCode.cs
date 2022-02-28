@@ -1,3 +1,5 @@
+﻿using System.Drawing;
+
 namespace Filter
 {
     public abstract class FilterParent
@@ -23,11 +25,11 @@ namespace Filter
         }
     }
 
-    public class MatrixFilter : FilterParent
+    public class MatrixFilter1 : FilterParent
     {
         protected float[,] kernel = null;
-        protected MatrixFilter() { }
-        public MatrixFilter(float[,] kernel)
+        protected MatrixFilter1() { }
+        public MatrixFilter1(float[,] kernel)
         {
             this.kernel = kernel;
         }
@@ -56,9 +58,10 @@ namespace Filter
         }
     }
 
-    public class EmbossingFilter : MatrixFilter
+    //1
+    public class EmbossingFilter1 : MatrixFilter1
     {
-        public EmbossingFilter()
+        public EmbossingFilter1()
         {
             int sizeX = 3, sizeY = 3;
             kernel = new float[sizeX, sizeY];
@@ -69,11 +72,12 @@ namespace Filter
             kernel[0, 1] = kernel[1, 2] = -1.0f;
         }
     }
-	
-	public class IncreaseBrightnessFilter: Filter
+
+    //2
+    public class IncreaseBrightnessFilter1 : FilterParent
     {
         private int value;
-        public IncreaseBrightnessFilter(int value = 20)
+        public IncreaseBrightnessFilter1(int value = 20)
         {
             this.value = value;
         }
@@ -110,14 +114,15 @@ namespace Filter
             return result;
         }
     }
-	
-	public class ShadesOfGrayFilter: Filter
+
+    //3
+    public class ShadesOfGrayFilter1 : FilterParent
     {
         protected override Color CalculateNewPixelColor(Bitmap source, int x, int y)
         {
             Color sourceColor = source.GetPixel(x, y);
 
-            int intensity = (int) (0.299 * sourceColor.R
+            int intensity = (int)(0.299 * sourceColor.R
                 + 0.587 * sourceColor.G + 0.114 * sourceColor.B);
 
             Color resultColor = Color.FromArgb(intensity, intensity, intensity);
@@ -134,7 +139,7 @@ namespace Filter
                 {
                     Color sourceColor = sourceImage.GetPixel(i, j);
 
-                    int intensity = (int)(0.299 * sourceColor.R 
+                    int intensity = (int)(0.299 * sourceColor.R
                         + 0.587 * sourceColor.G + 0.114 * sourceColor.B);
 
                     Color resultColor = Color.FromArgb(intensity, intensity, intensity);
@@ -151,13 +156,13 @@ namespace Filter
         {
             Bitmap result;
 
-            EmbossingFilter f = new EmbossingFilter();
-            result = f.ProcessImage(image);
+            EmbossingFilter1 f = new EmbossingFilter1();
+            result = f.ProcessImage(sourceImage);
 
-            IncreaseBrightnessFilter br = new IncreaseBrightnessFilter(100);
+            IncreaseBrightnessFilter1 br = new IncreaseBrightnessFilter1(100);
             result = br.ProcessImage(result);
 
-            ShadesOfGrayFilter s = new ShadesOfGrayFilter();
+            ShadesOfGrayFilter1 s = new ShadesOfGrayFilter1();
             result = s.ProcessImage(result);
 
             return result;
