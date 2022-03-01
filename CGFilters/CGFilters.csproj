@@ -46,11 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Filters\DilationFilter.cs" />
     <Compile Include="Filters\Filter.cs" />
     <Compile Include="Filters\InvertFilter.cs" />
+    <Compile Include="Filters\AutolevelsFilter.cs" />
     <Compile Include="Filters\MatrixFilters\EmbossingFilter.cs" />
-    <Compile Include="Filters\MatrixFilters\GrayWorldFilter.cs" />
+    <Compile Include="Filters\GrayWorldFilter.cs" />
     <Compile Include="Filters\MatrixFilters\MotionBlurFilter.cs" />
+    <Compile Include="Filters\PerfectReflectorFilter.cs" />
     <Compile Include="Filters\ShadesOfGrayFilter.cs" />
     <Compile Include="testcode.cs" />
     <Compile Include="IncreaseBrightnessFilter.cs" />

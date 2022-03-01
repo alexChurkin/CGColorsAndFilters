@@ -1,8 +1,8 @@
-﻿namespace Filter
-{
-    using System.Drawing;
+﻿using System.Drawing;
 
-    public class Filter
+namespace Filter
+{
+    public class GrayWorldFilter
     {
         protected static int Clamp(int value, int min, int max)
         {

@@ -48,40 +48,80 @@ namespace CGFilters
             pictureBox.Image = result;
             pictureBox.Refresh();
         }
-
+        //4
         private void increaseBrightnesstoolStripMenuItem_Click(object sender, EventArgs e)
         {
             Bitmap result = IncreaseBrightnessFilter.Execute(image);
             pictureBox.Image = result;
             pictureBox.Refresh();
         }
-
+        //5
         private void shiftToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Bitmap result = ShiftFilter.Execute(image);
             pictureBox.Image = result;
             pictureBox.Refresh();
         }
-
+        //6
         private void embossingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Bitmap result = EmbossingFilter.Execute(image);
             pictureBox.Image = result;
             pictureBox.Refresh();
         }
-
+        //7
         private void motionBlurToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Bitmap result = MotionBlurFilter.Execute(image);
             pictureBox.Image = result;
             pictureBox.Refresh();
         }
-
+        //8
         private void grayWorldToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Bitmap result = GrayWorldFilter.Execute(image);
             pictureBox.Image = result;
             pictureBox.Refresh();
         }
+        //9
+        private void autolevelsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bitmap result = AutolevelsFilter.Execute(image);
+            pictureBox.Image = result;
+            pictureBox.Refresh();
+        }
+        //10
+        private void perfectReflectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bitmap result = PerfectReflectionFilter.Execute(image);
+            pictureBox.Image = result;
+            pictureBox.Refresh();
+        }
+        //11
+        private void dilationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        //12
+        private void erosionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        //13
+        private void medianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        //14
+        private void sobelFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        //15
+        private void scharrFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

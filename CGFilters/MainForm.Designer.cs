@@ -137,78 +137,85 @@
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(247, 26);
-            this.toolStripMenuItem4.Text = "5 - Increase bringhtness";
+            this.toolStripMenuItem4.Text = "4 - Increase bringhtness";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.increaseBrightnesstoolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
             this.toolStripMenuItem5.Size = new System.Drawing.Size(247, 26);
-            this.toolStripMenuItem5.Text = "6 - Shift";
+            this.toolStripMenuItem5.Text = "5 - Shift";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.shiftToolStripMenuItem_Click);
             // 
             // embossingToolStripMenuItem
             // 
             this.embossingToolStripMenuItem.Name = "embossingToolStripMenuItem";
             this.embossingToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.embossingToolStripMenuItem.Text = "7 - Embossing";
+            this.embossingToolStripMenuItem.Text = "6 - Embossing";
             this.embossingToolStripMenuItem.Click += new System.EventHandler(this.embossingToolStripMenuItem_Click);
             // 
             // motionBlurToolStripMenuItem
             // 
             this.motionBlurToolStripMenuItem.Name = "motionBlurToolStripMenuItem";
             this.motionBlurToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.motionBlurToolStripMenuItem.Text = "8 - Motion blur";
+            this.motionBlurToolStripMenuItem.Text = "7 - Motion blur";
             this.motionBlurToolStripMenuItem.Click += new System.EventHandler(this.motionBlurToolStripMenuItem_Click);
             // 
             // grayWorldToolStripMenuItem
             // 
             this.grayWorldToolStripMenuItem.Name = "grayWorldToolStripMenuItem";
             this.grayWorldToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.grayWorldToolStripMenuItem.Text = "9 - Gray world";
+            this.grayWorldToolStripMenuItem.Text = "8 - Gray world";
             this.grayWorldToolStripMenuItem.Click += new System.EventHandler(this.grayWorldToolStripMenuItem_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
             this.toolStripMenuItem6.Size = new System.Drawing.Size(247, 26);
-            this.toolStripMenuItem6.Text = "10 - Autolevels";
+            this.toolStripMenuItem6.Text = "9 - Autolevels";
+            this.toolStripMenuItem6.Click += new System.EventHandler(this.autolevelsToolStripMenuItem_Click);
             // 
             // perfectReflectionToolStripMenuItem
             // 
             this.perfectReflectionToolStripMenuItem.Name = "perfectReflectionToolStripMenuItem";
             this.perfectReflectionToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.perfectReflectionToolStripMenuItem.Text = "11 - Perfect reflection";
+            this.perfectReflectionToolStripMenuItem.Text = "10 - Perfect reflection";
+            this.perfectReflectionToolStripMenuItem.Click += new System.EventHandler(this.perfectReflectionToolStripMenuItem_Click);
             // 
             // expansionToolStripMenuItem
             // 
             this.expansionToolStripMenuItem.Name = "expansionToolStripMenuItem";
             this.expansionToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.expansionToolStripMenuItem.Text = "12 - Expansion";
+            this.expansionToolStripMenuItem.Text = "11 - Dilation";
+            this.expansionToolStripMenuItem.Click += new System.EventHandler(this.dilationToolStripMenuItem_Click);
             // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
             this.toolStripMenuItem7.Size = new System.Drawing.Size(247, 26);
-            this.toolStripMenuItem7.Text = "13 - Narrow filter";
+            this.toolStripMenuItem7.Text = "12 - Erosion";
+            this.toolStripMenuItem7.Click += new System.EventHandler(this.erosionToolStripMenuItem_Click);
             // 
             // medianToolStripMenuItem
             // 
             this.medianToolStripMenuItem.Name = "medianToolStripMenuItem";
             this.medianToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.medianToolStripMenuItem.Text = "14 - Median";
+            this.medianToolStripMenuItem.Text = "13 - Median";
+            this.medianToolStripMenuItem.Click += new System.EventHandler(this.medianToolStripMenuItem_Click);
             // 
             // sobelFilterToolStripMenuItem
             // 
             this.sobelFilterToolStripMenuItem.Name = "sobelFilterToolStripMenuItem";
             this.sobelFilterToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.sobelFilterToolStripMenuItem.Text = "15 - Sobel filter";
+            this.sobelFilterToolStripMenuItem.Text = "14 - Sobel filter";
+            this.sobelFilterToolStripMenuItem.Click += new System.EventHandler(this.sobelFilterToolStripMenuItem_Click);
             // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
             this.toolStripMenuItem8.Size = new System.Drawing.Size(247, 26);
-            this.toolStripMenuItem8.Text = "16 - Scharr filter";
+            this.toolStripMenuItem8.Text = "15 - Scharr filter";
+            this.toolStripMenuItem8.Click += new System.EventHandler(this.scharrFilterToolStripMenuItem_Click);
             // 
             // MainForm
             // 
