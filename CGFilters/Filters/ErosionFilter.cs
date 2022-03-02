@@ -2,8 +2,7 @@
 
 namespace CGFilters
 {
-    //В данной реализации корректен только для Ч/Б изображений
-    public class DilationFilter
+    public class ErosionFilter
     {
         public static int Clamp(int value, int min, int max)
         {
@@ -14,7 +13,6 @@ namespace CGFilters
 
         public static Bitmap Execute(Bitmap source)
         {
-            //Bitmap result = new Bitmap(source);
             Bitmap result = new Bitmap(source.Width, source.Height);
 
             float[,] mask = new float[3, 3];
@@ -28,7 +26,7 @@ namespace CGFilters
             for (int x = 0; x < source.Width; x++)
                 for (int y = 0; y < source.Height; y++)
                 {
-                    int max = 0;
+                    int min = 255;
 
                     for (int i = -1; i <= 1; i++)
                         for (int j = -1; j <= 1; j++)
@@ -36,12 +34,12 @@ namespace CGFilters
                             int x_ = Clamp(x + i, 0, source.Width - 1);
                             int y_ = Clamp(y + j, 0, source.Height - 1);
 
-                            if (mask[i + 1, j + 1] > 0 && source.GetPixel(x_, y_).R > max)
+                            if (mask[i + 1, j + 1] > 0 && source.GetPixel(x_, y_).R < min)
                             {
-                                max = source.GetPixel(x_, y_).R;
+                                min = source.GetPixel(x_, y_).R;
                             }
                         }
-                    result.SetPixel(x, y, Color.FromArgb(max, max, max));
+                    result.SetPixel(x, y, Color.FromArgb(min, min, min));
                 }
             return result;
         }

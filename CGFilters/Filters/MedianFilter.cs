@@ -1,9 +1,8 @@
-﻿using System.Drawing;
-
-namespace CGFilters
+﻿namespace Filter
 {
-    //В данной реализации корректен только для Ч/Б изображений
-    public class DilationFilter
+    using System.Collections.Generic;
+    using System.Drawing;
+    public class Filter
     {
         public static int Clamp(int value, int min, int max)
         {
@@ -14,21 +13,15 @@ namespace CGFilters
 
         public static Bitmap Execute(Bitmap source)
         {
-            //Bitmap result = new Bitmap(source);
             Bitmap result = new Bitmap(source.Width, source.Height);
-
-            float[,] mask = new float[3, 3];
-
-            for (int x = 0; x < 3; x++)
-                for (int y = 0; y < 3; y++)
-                    mask[x, y] = 0.0f;
-            mask[0, 1] = mask[1, 0] = mask[1, 1] = mask[1, 2] = mask[2, 1] = 1.0f;
 
             //Проход по всем пикселям исходного изображения (кроме крайних)
             for (int x = 0; x < source.Width; x++)
                 for (int y = 0; y < source.Height; y++)
                 {
-                    int max = 0;
+                    List<int> Rvalues = new List<int>();
+                    List<int> Gvalues = new List<int>();
+                    List<int> Bvalues = new List<int>();
 
                     for (int i = -1; i <= 1; i++)
                         for (int j = -1; j <= 1; j++)
@@ -36,12 +29,20 @@ namespace CGFilters
                             int x_ = Clamp(x + i, 0, source.Width - 1);
                             int y_ = Clamp(y + j, 0, source.Height - 1);
 
-                            if (mask[i + 1, j + 1] > 0 && source.GetPixel(x_, y_).R > max)
-                            {
-                                max = source.GetPixel(x_, y_).R;
-                            }
+                            Color px = source.GetPixel(x_, y_);
+
+                            Rvalues.Add(px.R);
+                            Gvalues.Add(px.G);
+                            Bvalues.Add(px.B);
                         }
-                    result.SetPixel(x, y, Color.FromArgb(max, max, max));
+                    Rvalues.Sort();
+                    Gvalues.Sort();
+                    Bvalues.Sort();
+
+                    result.SetPixel(x, y, Color.FromArgb(
+                        Rvalues[Rvalues.Count / 2],
+                        Gvalues[Gvalues.Count / 2],
+                        Bvalues[Bvalues.Count / 2]));
                 }
             return result;
         }

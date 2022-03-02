@@ -100,17 +100,23 @@ namespace CGFilters
         //11
         private void dilationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Bitmap result = DilationFilter.Execute(image);
+            pictureBox.Image = result;
+            pictureBox.Refresh();
         }
         //12
         private void erosionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Bitmap result = ErosionFilter.Execute(image);
+            pictureBox.Image = result;
+            pictureBox.Refresh();
         }
         //13
         private void medianToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Bitmap result = MedianFilter.Execute(image);
+            pictureBox.Image = result;
+            pictureBox.Refresh();
         }
         //14
         private void sobelFilterToolStripMenuItem_Click(object sender, EventArgs e)
