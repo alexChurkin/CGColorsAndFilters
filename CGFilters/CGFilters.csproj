@@ -54,11 +54,11 @@
     <Compile Include="Filters\MatrixFilters\EmbossingFilter.cs" />
     <Compile Include="Filters\GrayWorldFilter.cs" />
     <Compile Include="Filters\MatrixFilters\MotionBlurFilter.cs" />
+    <Compile Include="Filters\MatrixFilters\SobelFilter.cs" />
     <Compile Include="Filters\MedianFilter.cs" />
     <Compile Include="Filters\PerfectReflectorFilter.cs" />
     <Compile Include="Filters\ShadesOfGrayFilter.cs" />
-    <Compile Include="testcode.cs" />
-    <Compile Include="IncreaseBrightnessFilter.cs" />
+    <Compile Include="Filters\IncreaseBrightnessFilter.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,7 +69,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Filters\SepiaFilter.cs" />
-    <Compile Include="ShiftFilter.cs" />
+    <Compile Include="Filters\ShiftFilter.cs" />
+    <Compile Include="TestSobel.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

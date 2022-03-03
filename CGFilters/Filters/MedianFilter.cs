@@ -1,8 +1,8 @@
-﻿namespace Filter
+﻿namespace CGFilters
 {
     using System.Collections.Generic;
     using System.Drawing;
-    public class Filter
+    public class MedianFilter
     {
         public static int Clamp(int value, int min, int max)
         {

@@ -121,7 +121,9 @@ namespace CGFilters
         //14
         private void sobelFilterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Bitmap result = TestFilter.Execute(image);
+            pictureBox.Image = result;
+            pictureBox.Refresh();
         }
         //15
         private void scharrFilterToolStripMenuItem_Click(object sender, EventArgs e)
