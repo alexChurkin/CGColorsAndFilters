@@ -1,13 +1,13 @@
-﻿using System.Drawing;
-using System;
+﻿using System;
+using System.Drawing;
 
 namespace CGFilters
 {
-    public class SobelKernel
+    public class ScharrKernel
     {
         protected float[,] kernel = null;
 
-        public SobelKernel(int sizeX, int sizeY)
+        public ScharrKernel(int sizeX, int sizeY)
         {
             kernel = new float[sizeX, sizeY];
         }
@@ -19,42 +19,35 @@ namespace CGFilters
         }
     }
 
-    public class SobelGxKernel : SobelKernel
+    public class ScharrGxKernel : ScharrKernel
     {
-        public SobelGxKernel() : base(3, 3)
+        public ScharrGxKernel() : base(3, 3)
         {
-            kernel[0, 0] = -1.0f;
-            kernel[0, 1] = 0.0f;
-            kernel[0, 2] = 1.0f;
-            kernel[1, 0] = -2.0f;
-            kernel[1, 1] = 0.0f;
-            kernel[1, 2] = 2.0f;
-            kernel[2, 0] = -1.0f;
-            kernel[2, 1] = 0.0f;
-            kernel[2, 2] = 1.0f;
+            kernel[0, 1] = kernel[1, 1] = kernel[2, 1] = 0.0f;
+            kernel[0, 0] = kernel[2, 0] = -3.0f;
+            kernel[0, 2] = kernel[2, 2] = 3.0f;
+            kernel[1, 0] = -10.0f;
+            kernel[1, 2] = 10.0f;
         }
     }
-
-    public class SobelGyKernel : SobelKernel
+    public class ScharrGyKernel : ScharrKernel
     {
-        public SobelGyKernel() : base(3, 3)
+        public ScharrGyKernel() : base(3, 3)
         {
-            kernel[0, 0] = -1.0f;
-            kernel[0, 1] = -2.0f;
-            kernel[0, 2] = -1.0f;
+            kernel[0, 0] = kernel[0, 2] = -3.0f;
+            kernel[2, 0] = kernel[2, 2] = 3.0f;
+            kernel[0, 1] = -10.0f;
+            kernel[2, 1] = 10.0f;
             kernel[1, 0] = kernel[1, 1] = kernel[1, 2] = 0.0f;
-            kernel[2, 0] = 1.0f;
-            kernel[2, 1] = 2.0f;
-            kernel[2, 2] = 1.0f;
         }
     }
 
-    public class SobelFilter
+    public class ScharrFilter
     {
         public static Bitmap Execute(Bitmap source)
         {
-            SobelGxKernel gxKernel = new SobelGxKernel();
-            SobelGyKernel gyKernel = new SobelGyKernel();
+            ScharrGxKernel gxKernel = new ScharrGxKernel();
+            ScharrGyKernel gyKernel = new ScharrGyKernel();
 
             Bitmap result = new Bitmap(source.Width, source.Height);
 
